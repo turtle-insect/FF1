@@ -1,0 +1,53 @@
+﻿<Window x:Class="FF1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FF1"
+        mc:Ignorable="d"
+        Title="FF1 セーブデータ改造(Nintendo 3DS)" Height="650" Width="800"
+        WindowStartupLocation="CenterScreen"
+        AllowDrop="True" Drop="Window_Drop" PreviewDragOver="Window_PreviewDragOver">
+    <Grid>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="ファイル(_F)">
+                    <MenuItem Header="開く(_O)" Click="MenuItemFileOpen_Click"/>
+                    <MenuItem Header="上書き保存(_S)" Click="MenuItemFileSave_Click"/>
+                    <MenuItem Header="名前を付けて保存(_S)" Click="MenuItemFileSaveAs_Click"/>
+                    <Separator/>
+                    <MenuItem Header="終了(_X)" Click="MenuItemExit_Click"/>
+                </MenuItem>
+                <MenuItem Header="情報(_A)" Click="MenuItemAbout_Click"/>
+            </Menu>
+            <ToolBar DockPanel.Dock="Top">
+                <Button Width="32" Height="32" Click="ToolBarFileOpen_Click" ToolTip="開く">
+                    <Image Source="{StaticResource Open}"/>
+                </Button>
+                <Button Width="32" Height="32" Click="ToolBarFileSave_Click" ToolTip="保存">
+                    <Image Source="{StaticResource Save}"/>
+                </Button>
+                <ComboBox SelectedIndex="0" SelectionChanged="ToolBarAdventure_SelectionChanged">
+                    <ComboBoxItem Content="データ01"/>
+                    <ComboBoxItem Content="データ02"/>
+                    <ComboBoxItem Content="データ03"/>
+                    <ComboBoxItem Content="データ04"/>
+                    <ComboBoxItem Content="データ05"/>
+                    <ComboBoxItem Content="データ06"/>
+                    <ComboBoxItem Content="データ07"/>
+                    <ComboBoxItem Content="データ08"/>
+                    <ComboBoxItem Content="データ09"/>
+                    <ComboBoxItem Content="データ10"/>
+                </ComboBox>
+            </ToolBar>
+            <TabControl>
+                <TabItem Header="基本設定">
+                    
+                </TabItem>
+                <TabItem Header="人物">
+
+                </TabItem>
+            </TabControl>
+        </DockPanel>
+    </Grid>
+</Window>
