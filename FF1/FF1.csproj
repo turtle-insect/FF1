@@ -54,6 +54,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Charactor.cs" />
     <Compile Include="SaveData.cs" />
     <Compile Include="Util.cs" />
     <Page Include="MainWindow.xaml">

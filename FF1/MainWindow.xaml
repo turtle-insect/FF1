@@ -45,7 +45,54 @@
                     
                 </TabItem>
                 <TabItem Header="人物">
-
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <ListBox x:Name="ListBoxParty" ItemsSource="{Binding Party}"/>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="名前"/>
+                            <Label Grid.Row="1" Content="職業"/>
+                            <ComboBox Grid.Row="1" Grid.Column="1" SelectedIndex="{Binding ElementName=ListBoxParty, Path=SelectedItem.Job}">
+                                <ComboBoxItem Content="戦士"/>
+                                <ComboBoxItem Content="シーフ"/>
+                                <ComboBoxItem Content="モンク"/>
+                                <ComboBoxItem Content="赤魔術士"/>
+                                <ComboBoxItem Content="白魔術士"/>
+                                <ComboBoxItem Content="黒魔術士"/>
+                                <ComboBoxItem Content="ナイト"/>
+                                <ComboBoxItem Content="忍者"/>
+                                <ComboBoxItem Content="スーパーモンク"/>
+                                <ComboBoxItem Content="赤魔導士"/>
+                                <ComboBoxItem Content="白魔導士"/>
+                                <ComboBoxItem Content="黒魔導士"/>
+                            </ComboBox>
+                        </Grid>
+                    </Grid>
                 </TabItem>
             </TabControl>
         </DockPanel>
