@@ -15,7 +15,7 @@ namespace FF1
 		{
 			for (uint i = 0; i < 4; i++)
 			{
-				Party.Add(new Charactor(0x1A + 92 * i));
+				Party.Add(new Charactor(0x1A + 92 * i) { Name = (i + 1) + "人目" });
 			}
 		}
 	}

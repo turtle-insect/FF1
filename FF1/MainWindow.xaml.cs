@@ -90,6 +90,21 @@ namespace FF1
 			SaveData.Instance().Adventure = (uint)cb?.SelectedIndex;
 		}
 
+		private void ButtonMagic1_Click(object sender, RoutedEventArgs e)
+		{
+			SelectMagic(((sender as Button).DataContext as MagicGroup).Magic1);
+		}
+
+		private void ButtonMagic2_Click(object sender, RoutedEventArgs e)
+		{
+			SelectMagic(((sender as Button).DataContext as MagicGroup).Magic2);
+		}
+
+		private void ButtonMagic3_Click(object sender, RoutedEventArgs e)
+		{
+			SelectMagic(((sender as Button).DataContext as MagicGroup).Magic3);
+		}
+
 		private void Init()
 		{
 			DataContext = new DataContext();
@@ -113,6 +128,17 @@ namespace FF1
 		{
 			if (SaveData.Instance().Save() == true) MessageBox.Show("書込成功");
 			else MessageBox.Show("書込失敗");
+		}
+
+		private void SelectMagic(Magic magic)
+		{
+			if (magic == null) return;
+
+			ItemSelectWindow window = new ItemSelectWindow();
+			window.Kind = ItemSelectWindow.eKind.eMagic;
+			window.ID = magic.ID;
+			window.ShowDialog();
+			magic.ID = window.ID;
 		}
 	}
 }

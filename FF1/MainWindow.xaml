@@ -52,7 +52,7 @@
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <ListBox x:Name="ListBoxParty" ItemsSource="{Binding Party}"/>
+                        <ListBox x:Name="ListBoxParty" ItemsSource="{Binding Party}" DisplayMemberPath="Name"/>
                         <Grid Grid.Column="1">
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
@@ -131,6 +131,33 @@
                             <Label Grid.Row="15" Content="命中率+"/>
                             <Label Grid.Row="16" Content="回比率+"/>
                         </Grid>
+                        <DockPanel Grid.Column="3">
+                            <Label DockPanel.Dock="Top" Content="魔法"/>
+                            <ListBox ItemsSource="{Binding ElementName=ListBoxParty, Path=SelectedItem.Magics}">
+                                <ListBox.Resources>
+                                    <local:MagicConverter x:Key="MagicConverter"/>
+                                </ListBox.Resources>
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <Label Content="{Binding Name}"/>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button Content=" ... " Click="ButtonMagic1_Click"/>
+                                                <Label Content="{Binding Magic1.ID, Converter={StaticResource MagicConverter}}"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button Content=" ... " Click="ButtonMagic2_Click"/>
+                                                <Label Content="{Binding Magic2.ID, Converter={StaticResource MagicConverter}}"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button Content=" ... " Click="ButtonMagic3_Click"/>
+                                                <Label Content="{Binding Magic3.ID, Converter={StaticResource MagicConverter}}"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </DockPanel>
                     </Grid>
                 </TabItem>
             </TabControl>

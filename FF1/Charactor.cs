@@ -3,16 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 namespace FF1
 {
 	class Charactor
 	{
+		public ObservableCollection<MagicGroup> Magics { get; set; } = new ObservableCollection<MagicGroup>();
 		private readonly uint mAddress;
 		public Charactor(uint address)
 		{
 			mAddress = address;
+
+			for (uint i = 0; i < 8; i++)
+			{
+				Magics.Add(new MagicGroup(address + 51 + i * 3) { Name = "Lv" + (i + 1) });
+			}
 		}
+
+		public String Name { get; set; }
 
 		public uint Job
 		{

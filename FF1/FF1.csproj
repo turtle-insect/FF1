@@ -55,8 +55,18 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Charactor.cs" />
+    <Compile Include="ItemSelectWindow.xaml.cs">
+      <DependentUpon>ItemSelectWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Magic.cs" />
+    <Compile Include="MagicConverter.cs" />
+    <Compile Include="MagicGroup.cs" />
     <Compile Include="SaveData.cs" />
     <Compile Include="Util.cs" />
+    <Page Include="ItemSelectWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

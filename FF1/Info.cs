@@ -6,7 +6,7 @@ namespace FF1
 	class Info
 	{
 		private static Info mThis;
-		public List<NameValueInfo> Items { get; private set; } = new List<NameValueInfo>();
+		public List<NameValueInfo> Magics { get; private set; } = new List<NameValueInfo>();
 
 		private Info() { }
 
@@ -36,7 +36,7 @@ namespace FF1
 
 		private void Init()
 		{
-			AppendList("info\\item.txt", Items);
+			AppendList("info\\magic.txt", Magics);
 		}
 
 		private void AppendList<Type>(String filename, List<Type> items)
