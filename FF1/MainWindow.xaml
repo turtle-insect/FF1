@@ -131,6 +131,37 @@
                             <Label Grid.Row="15" Content="命中率+"/>
                             <Label Grid.Row="16" Content="回比率+"/>
                         </Grid>
+                        <StackPanel Grid.Column="2">
+                            <StackPanel.Resources>
+                                <local:WeponConverter x:Key="WeponConverter"/>
+                                <local:ArmorConverter x:Key="ArmorConverter"/>
+                            </StackPanel.Resources>
+                            <Label Content="武器"/>
+                            <StackPanel Orientation="Horizontal" DataContext="{Binding ElementName=ListBoxParty, Path=SelectedItem}">
+                                <Button Content=" ... " Click="ButtonWeapon_Click"/>
+                                <Label Content="{Binding Weapon, Converter={StaticResource WeponConverter}}"/>
+                            </StackPanel>
+                            <Label Content="盾"/>
+                            <StackPanel Orientation="Horizontal" DataContext="{Binding ElementName=ListBoxParty, Path=SelectedItem}">
+                                <Button Content=" ... " Click="ButtonShield_Click"/>
+                                <Label Content="{Binding Shield, Converter={StaticResource ArmorConverter}}"/>
+                            </StackPanel>
+                            <Label Content="頭"/>
+                            <StackPanel Orientation="Horizontal" DataContext="{Binding ElementName=ListBoxParty, Path=SelectedItem}">
+                                <Button Content=" ... " Click="ButtonHead_Click"/>
+                                <Label Content="{Binding Head, Converter={StaticResource ArmorConverter}}"/>
+                            </StackPanel>
+                            <Label Content="体"/>
+                            <StackPanel Orientation="Horizontal" DataContext="{Binding ElementName=ListBoxParty, Path=SelectedItem}">
+                                <Button Content=" ... " Click="ButtonBody_Click"/>
+                                <Label Content="{Binding Body, Converter={StaticResource ArmorConverter}}"/>
+                            </StackPanel>
+                            <Label Content="腕"/>
+                            <StackPanel Orientation="Horizontal" DataContext="{Binding ElementName=ListBoxParty, Path=SelectedItem}">
+                                <Button Content=" ... " Click="ButtonArm_Click"/>
+                                <Label Content="{Binding Arm, Converter={StaticResource ArmorConverter}}"/>
+                            </StackPanel>
+                        </StackPanel>
                         <DockPanel Grid.Column="3">
                             <Label DockPanel.Dock="Top" Content="魔法"/>
                             <ListBox ItemsSource="{Binding ElementName=ListBoxParty, Path=SelectedItem.Magics}">

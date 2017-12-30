@@ -105,6 +105,66 @@ namespace FF1
 			SelectMagic(((sender as Button).DataContext as MagicGroup).Magic3);
 		}
 
+		private void ButtonWeapon_Click(object sender, RoutedEventArgs e)
+		{
+			Charactor ch = (sender as Button).DataContext as Charactor;
+			if (ch == null) return;
+
+			ItemSelectWindow window = new ItemSelectWindow();
+			window.Kind = ItemSelectWindow.eKind.eWeapon;
+			window.ID = ch.Weapon;
+			window.ShowDialog();
+			ch.Weapon = window.ID;
+		}
+
+		private void ButtonShield_Click(object sender, RoutedEventArgs e)
+		{
+			Charactor ch = (sender as Button).DataContext as Charactor;
+			if (ch == null) return;
+
+			ItemSelectWindow window = new ItemSelectWindow();
+			window.Kind = ItemSelectWindow.eKind.eArmor;
+			window.ID = ch.Shield;
+			window.ShowDialog();
+			ch.Shield = window.ID;
+		}
+
+		private void ButtonHead_Click(object sender, RoutedEventArgs e)
+		{
+			Charactor ch = (sender as Button).DataContext as Charactor;
+			if (ch == null) return;
+
+			ItemSelectWindow window = new ItemSelectWindow();
+			window.Kind = ItemSelectWindow.eKind.eArmor;
+			window.ID = ch.Head;
+			window.ShowDialog();
+			ch.Head = window.ID;
+		}
+
+		private void ButtonBody_Click(object sender, RoutedEventArgs e)
+		{
+			Charactor ch = (sender as Button).DataContext as Charactor;
+			if (ch == null) return;
+
+			ItemSelectWindow window = new ItemSelectWindow();
+			window.Kind = ItemSelectWindow.eKind.eArmor;
+			window.ID = ch.Body;
+			window.ShowDialog();
+			ch.Body = window.ID;
+		}
+
+		private void ButtonArm_Click(object sender, RoutedEventArgs e)
+		{
+			Charactor ch = (sender as Button).DataContext as Charactor;
+			if (ch == null) return;
+
+			ItemSelectWindow window = new ItemSelectWindow();
+			window.Kind = ItemSelectWindow.eKind.eArmor;
+			window.ID = ch.Arm;
+			window.ShowDialog();
+			ch.Arm = window.ID;
+		}
+
 		private void Init()
 		{
 			DataContext = new DataContext();

@@ -4,13 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace FF1
 {
-	class Charactor
+	class Charactor : INotifyPropertyChanged
 	{
 		public ObservableCollection<MagicGroup> Magics { get; set; } = new ObservableCollection<MagicGroup>();
 		private readonly uint mAddress;
+
+		public event PropertyChangedEventHandler PropertyChanged;
+
 		public Charactor(uint address)
 		{
 			mAddress = address;
@@ -189,6 +193,76 @@ namespace FF1
 			set
 			{
 				Util.WriteNumber(mAddress + 39, 1, value, 0, 255);
+			}
+		}
+
+		public uint Weapon
+		{
+			get
+			{
+				return SaveData.Instance().ReadNumber(mAddress + 46, 1);
+			}
+
+			set
+			{
+				SaveData.Instance().WriteNumber(mAddress + 46, 1, value);
+				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Weapon)));
+			}
+		}
+
+		public uint Shield
+		{
+			get
+			{
+				return SaveData.Instance().ReadNumber(mAddress + 47, 1);
+			}
+
+			set
+			{
+				SaveData.Instance().WriteNumber(mAddress + 47, 1, value);
+				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Shield)));
+			}
+		}
+
+		public uint Head
+		{
+			get
+			{
+				return SaveData.Instance().ReadNumber(mAddress + 48, 1);
+			}
+
+			set
+			{
+				SaveData.Instance().WriteNumber(mAddress + 48, 1, value);
+				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Head)));
+			}
+		}
+
+		public uint Body
+		{
+			get
+			{
+				return SaveData.Instance().ReadNumber(mAddress + 49, 1);
+			}
+
+			set
+			{
+				SaveData.Instance().WriteNumber(mAddress + 49, 1, value);
+				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Body)));
+			}
+		}
+
+		public uint Arm
+		{
+			get
+			{
+				return SaveData.Instance().ReadNumber(mAddress + 50, 1);
+			}
+
+			set
+			{
+				SaveData.Instance().WriteNumber(mAddress + 50, 1, value);
+				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Arm)));
 			}
 		}
 	}

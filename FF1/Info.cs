@@ -7,6 +7,8 @@ namespace FF1
 	{
 		private static Info mThis;
 		public List<NameValueInfo> Magics { get; private set; } = new List<NameValueInfo>();
+		public List<NameValueInfo> Wepons { get; private set; } = new List<NameValueInfo>();
+		public List<NameValueInfo> Armors { get; private set; } = new List<NameValueInfo>();
 
 		private Info() { }
 
@@ -37,6 +39,8 @@ namespace FF1
 		private void Init()
 		{
 			AppendList("info\\magic.txt", Magics);
+			AppendList("info\\wepon.txt", Wepons);
+			AppendList("info\\armor.txt", Armors);
 		}
 
 		private void AppendList<Type>(String filename, List<Type> items)
