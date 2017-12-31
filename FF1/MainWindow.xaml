@@ -191,6 +191,22 @@
                         </DockPanel>
                     </Grid>
                 </TabItem>
+                <TabItem Header="アイテム">
+                    <ListBox ItemsSource="{Binding Items}">
+                        <ListBox.Resources>
+                            <local:ItemConverter x:Key="ItemConverter"/>
+                        </ListBox.Resources>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Content=" ... " Click="ButtonItem_Click"/>
+                                    <TextBox Width="40" Text="{Binding Count, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <Label Content="{Binding ID, Converter={StaticResource ItemConverter}}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </TabItem>
             </TabControl>
         </DockPanel>
     </Grid>

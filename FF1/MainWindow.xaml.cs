@@ -88,6 +88,7 @@ namespace FF1
 		{
 			ComboBox cb = sender as ComboBox;
 			SaveData.Instance().Adventure = (uint)cb?.SelectedIndex;
+			Init();
 		}
 
 		private void ButtonMagic1_Click(object sender, RoutedEventArgs e)
@@ -163,6 +164,19 @@ namespace FF1
 			window.ID = ch.Arm;
 			window.ShowDialog();
 			ch.Arm = window.ID;
+		}
+
+		private void ButtonItem_Click(object sender, RoutedEventArgs e)
+		{
+			Item item = (sender as Button).DataContext as Item;
+			if (item == null) return;
+
+			ItemSelectWindow window = new ItemSelectWindow();
+			window.Kind = ItemSelectWindow.eKind.eItem;
+			window.ID = item.ID;
+			window.ShowDialog();
+			item.ID = window.ID;
+			if (item.ID != 0 && item.Count == 0) item.Count = 1;
 		}
 
 		private void Init()

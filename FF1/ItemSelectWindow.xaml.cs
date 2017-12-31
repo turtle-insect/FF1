@@ -21,6 +21,7 @@ namespace FF1
     {
 		public enum eKind
 		{
+			eItem,
 			eMagic,
 			eWeapon,
 			eArmor,
@@ -70,6 +71,7 @@ namespace FF1
 		{
 			ListBoxItem.Items.Clear();
 			List<NameValueInfo> items = null;
+			if (Kind == eKind.eItem) items = Info.Instance().Items;
 			if (Kind == eKind.eMagic) items = Info.Instance().Magics;
 			if (Kind == eKind.eWeapon) items = Info.Instance().Wepons;
 			if (Kind == eKind.eArmor) items = Info.Instance().Armors;

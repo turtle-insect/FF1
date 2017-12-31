@@ -56,6 +56,8 @@
     </ApplicationDefinition>
     <Compile Include="ArmorConverter.cs" />
     <Compile Include="Charactor.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="ItemConverter.cs" />
     <Compile Include="ItemSelectWindow.xaml.cs">
       <DependentUpon>ItemSelectWindow.xaml</DependentUpon>
     </Compile>

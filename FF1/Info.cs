@@ -6,6 +6,7 @@ namespace FF1
 	class Info
 	{
 		private static Info mThis;
+		public List<NameValueInfo> Items { get; private set; } = new List<NameValueInfo>();
 		public List<NameValueInfo> Magics { get; private set; } = new List<NameValueInfo>();
 		public List<NameValueInfo> Wepons { get; private set; } = new List<NameValueInfo>();
 		public List<NameValueInfo> Armors { get; private set; } = new List<NameValueInfo>();
@@ -38,6 +39,7 @@ namespace FF1
 
 		private void Init()
 		{
+			AppendList("info\\item.txt", Items);
 			AppendList("info\\magic.txt", Magics);
 			AppendList("info\\wepon.txt", Wepons);
 			AppendList("info\\armor.txt", Armors);
