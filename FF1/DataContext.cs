@@ -11,6 +11,7 @@ namespace FF1
     {
 		public ObservableCollection<Charactor> Party { get; set; } = new ObservableCollection<Charactor>();
 		public ObservableCollection<Item> Items { get; set; } = new ObservableCollection<Item>();
+		public ObservableCollection<Importance> Importances { get; set; } = new ObservableCollection<Importance>();
 
 		public DataContext()
 		{
@@ -22,6 +23,11 @@ namespace FF1
 			for (uint i = 0; i < 186; i++)
 			{
 				Items.Add(new Item(0x17C + i * 3));
+			}
+
+			foreach (var imp in Info.Instance().Importances)
+			{
+				Importances.Add(new Importance(0x6C8, 31 - imp.Value) { Name = imp.Name });
 			}
 		}
 	}
