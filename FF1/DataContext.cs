@@ -30,5 +30,33 @@ namespace FF1
 				Importances.Add(new Importance(0x6C8, 31 - imp.Value) { Name = imp.Name });
 			}
 		}
+
+		public uint PlayHour
+		{
+			get
+			{
+				return SaveData.Instance().ReadNumber(0x3B0, 4) / 3600;
+			}
+
+			set
+			{
+				uint minute = SaveData.Instance().ReadNumber(0x3B0, 4) / 60 % 60;
+				SaveData.Instance().WriteNumber(0x3B0, 4, value * 3600 + minute * 60);
+			}
+		}
+
+		public uint PlayMinute
+		{
+			get
+			{
+				return SaveData.Instance().ReadNumber(0x3B0, 4) / 60 % 60;
+			}
+
+			set
+			{
+				uint hour = SaveData.Instance().ReadNumber(0x3B0, 4) / 3600;
+				SaveData.Instance().WriteNumber(0x3B0, 4, value * 60 + hour * 3600);
+			}
+		}
 	}
 }
