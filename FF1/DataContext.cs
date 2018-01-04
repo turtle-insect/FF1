@@ -58,5 +58,18 @@ namespace FF1
 				SaveData.Instance().WriteNumber(0x3B0, 4, value * 60 + hour * 3600);
 			}
 		}
+
+		public uint Gill
+		{
+			get
+			{
+				return SaveData.Instance().ReadNumber(0x3AC, 4);
+			}
+
+			set
+			{
+				Util.WriteNumber(0x3AC, 4, value, 0, 9999999);
+			}
+		}
 	}
 }
