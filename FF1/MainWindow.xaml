@@ -65,6 +65,8 @@
                         <Label Grid.Row="1" Grid.Column="2" Content="分"/>
                         <Label Grid.Row="2" Content="ギル"/>
                         <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Gill, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="3" Content="歩数"/>
+                        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Step, UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
                 </TabItem>
                 <TabItem Header="人物">

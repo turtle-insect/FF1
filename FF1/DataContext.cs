@@ -71,5 +71,18 @@ namespace FF1
 				Util.WriteNumber(0x3AC, 4, value, 0, 9999999);
 			}
 		}
+
+		public uint Step
+		{
+			get
+			{
+				return SaveData.Instance().ReadNumber(0x3B4, 4);
+			}
+
+			set
+			{
+				Util.WriteNumber(0x3B4, 4, value, 0, 9999999);
+			}
+		}
 	}
 }
