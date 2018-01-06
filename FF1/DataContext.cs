@@ -84,5 +84,18 @@ namespace FF1
 				Util.WriteNumber(0x3B4, 4, value, 0, 9999999);
 			}
 		}
+
+		public bool Ship
+		{
+			get
+			{
+				return SaveData.Instance().ReadBit(0x6AC, 1);
+			}
+
+			set
+			{
+				SaveData.Instance().WriteBit(0x6AC, 1, value);
+			}
+		}
 	}
 }
