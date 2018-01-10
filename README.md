@@ -1,3 +1,5 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/1k21y30scaimi97w?svg=true)](https://ci.appveyor.com/project/turtle-insect/ff1)
+
 # 概要
 3DS ファイナルファンタジーのセーブデータ編集Tool
 
