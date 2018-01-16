@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 
 namespace FF1
 {
-    class Magic : INotifyPropertyChanged
+	class Magic : INotifyPropertyChanged
     {
 		public event PropertyChangedEventHandler PropertyChanged;
 		private readonly uint mAddress;
