@@ -56,7 +56,9 @@
                             <RowDefinition/>
                             <RowDefinition/>
                             <RowDefinition/>
-                            <RowDefinition Height="10*"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="8*"/>
                         </Grid.RowDefinitions>
                         <Label Grid.RowSpan="2" VerticalAlignment="Center" Content="タイム"/>
                         <TextBox Grid.Column="1" Text="{Binding PlayHour, UpdateSourceTrigger=PropertyChanged}"/>
@@ -67,6 +69,9 @@
                         <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Gill, UpdateSourceTrigger=PropertyChanged}"/>
                         <Label Grid.Row="3" Content="歩数"/>
                         <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Step, UpdateSourceTrigger=PropertyChanged}"/>
+
+                        <Label Grid.Row="5" Content="船"/>
+                        <CheckBox Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" IsChecked="{Binding Ship}"/>
                     </Grid>
                 </TabItem>
                 <TabItem Header="人物">
