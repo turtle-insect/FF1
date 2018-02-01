@@ -92,5 +92,18 @@ namespace FF1
 				SaveData.Instance().WriteBit(0x6AC, 1, value);
 			}
 		}
+
+		public bool RedCrystal
+		{
+			get
+			{
+				return SaveData.Instance().ReadBit(0x6AE, 3);
+			}
+
+			set
+			{
+				SaveData.Instance().WriteBit(0x6AE, 3, value);
+			}
+		}
 	}
 }
