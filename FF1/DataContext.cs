@@ -105,5 +105,18 @@ namespace FF1
 				SaveData.Instance().WriteBit(0x6AE, 3, value);
 			}
 		}
+
+		public bool YellowCrystal
+		{
+			get
+			{
+				return SaveData.Instance().ReadBit(0x6AE, 1);
+			}
+
+			set
+			{
+				SaveData.Instance().WriteBit(0x6AE, 1, value);
+			}
+		}
 	}
 }
