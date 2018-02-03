@@ -118,5 +118,18 @@ namespace FF1
 				SaveData.Instance().WriteBit(0x6AE, 1, value);
 			}
 		}
+
+		public bool BlueCrystal
+		{
+			get
+			{
+				return SaveData.Instance().ReadBit(0x6AF, 5);
+			}
+
+			set
+			{
+				SaveData.Instance().WriteBit(0x6AF, 5, value);
+			}
+		}
 	}
 }
