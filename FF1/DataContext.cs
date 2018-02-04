@@ -131,5 +131,18 @@ namespace FF1
 				SaveData.Instance().WriteBit(0x6AF, 5, value);
 			}
 		}
+
+		public bool GreenCrystal
+		{
+			get
+			{
+				return SaveData.Instance().ReadBit(0x6B0, 6);
+			}
+
+			set
+			{
+				SaveData.Instance().WriteBit(0x6B0, 6, value);
+			}
+		}
 	}
 }
