@@ -58,7 +58,11 @@
                             <RowDefinition/>
                             <RowDefinition/>
                             <RowDefinition/>
-                            <RowDefinition Height="8*"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="4*"/>
                         </Grid.RowDefinitions>
                         <Label Grid.RowSpan="2" VerticalAlignment="Center" Content="タイム"/>
                         <TextBox Grid.Column="1" Text="{Binding PlayHour, UpdateSourceTrigger=PropertyChanged}"/>
@@ -72,6 +76,9 @@
 
                         <Label Grid.Row="5" Content="船"/>
                         <CheckBox Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" IsChecked="{Binding Ship}"/>
+
+                        <Label Grid.Row="7" Content="赤クリスタル"/>
+                        <CheckBox Grid.Row="7" Grid.Column="1" VerticalAlignment="Center" IsChecked="{Binding RedCrystal}"/>
                     </Grid>
                 </TabItem>
                 <TabItem Header="人物">
