@@ -83,6 +83,8 @@
                         <CheckBox Grid.Row="8" Grid.Column="1" VerticalAlignment="Center" IsChecked="{Binding YellowCrystal}"/>
                         <Label Grid.Row="9" Content="青クリスタル"/>
                         <CheckBox Grid.Row="9" Grid.Column="1" VerticalAlignment="Center" IsChecked="{Binding BlueCrystal}"/>
+                        <Label Grid.Row="10" Content="緑クリスタル"/>
+                        <CheckBox Grid.Row="10" Grid.Column="1" VerticalAlignment="Center" IsChecked="{Binding GreenCrystal}"/>
                     </Grid>
                 </TabItem>
                 <TabItem Header="人物">
