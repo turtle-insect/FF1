@@ -1,3 +1,4 @@
+![DL Count](https://img.shields.io/github/downloads/turtle-insect/FF1/total.svg)
 [![Build status](https://ci.appveyor.com/api/projects/status/1k21y30scaimi97w?svg=true)](https://ci.appveyor.com/project/turtle-insect/ff1)
 
 # 概要
